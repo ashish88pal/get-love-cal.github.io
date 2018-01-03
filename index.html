@@ -1,18 +1,48 @@
 
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>calculator data</title>		
 		
+		<style>
+		
+		.yy{
+		
+		 margin-bottom: 50px;
+		 text-align: center;
+		font-size: 100px;
+		}
+		
+		.bd {
+	padding: 30px;
+	border-radius: 50px;
+	font-size: 50px;
+	background-color: #2fd9da;
+	color: #000;
+	}
+	
+	.zz{
+	text-align: center;
+	background-color: #888;
+	
+	padding: 30px;
+	font-size: 50px;
+	margin: 0px auto;
+	
+	box-shadow: 0px 0px 40px 15px #000;
+	border-radius: 20px;
+	
+	}
+		
+		
+		</style>
+		
 	</head>
-	<body>
-		<div>
-			<p>
-				<pre id="logger"></pre>
-				<ol id="scorelist">
-				</ol>
-			</p>
-		</div>
+	<body class="bd">
+	
+	<div class="yy">Love Calculator Data</div>
+		<div  class="zz" id="demo"> </div>
 		<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 		<script>
   // Initialize Firebase
@@ -33,25 +63,23 @@
 		var couples = hackdev.val();
 		var keys = Object.keys(couples);
 		
+			
 		
 			for( var i = 0; i < keys.length; i++){
 			
 			var k = keys[i];
-			var list = couples[k].list;
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			console.log(list );	
-			document.write(  (i+1) + ". "+ list  + "<br>");
-			
+		
+			var p = document.createElement("p");
+			var node = document.createTextNode((i+1) + ". "+couples[k].list);
+			p.appendChild(node);
+			var div  = document.getElementById("demo");
+			div.appendChild(p);
+		
+		
+		
 		}
+			
 		
 		
 		
